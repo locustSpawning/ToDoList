@@ -1,8 +1,119 @@
+:root {
+    --header-color:#363434;
+    --nav-color: #d3d1d1;
+    --main-color:#efecec;
+    --accent-color: #8ad1dd;
+}
+
 body{
-   
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   min-height: 100vh;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* HEADER */
+#header{
+    height: 80px;
+    display: flex;
+    padding: 10px;
+    background-color:var(--header-color);
+    align-items: center;
+    font-size: 25px;
+    color:var(--main-color);
 }
 
 #header-icon{
-    max-height:50px;
-    max-width:50px;
+    max-height:40px;
+    max-width:40px;
+    padding: 15px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+img path{
+    color: white;
+    fill: currentColor;
+}
+
+/* SIDE NAV */
+
+#nav {
+    flex-shrink: 1;
+    padding: 20px 40px 20px;
+    background-color:var(--nav-color);
+    width: 300px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-icons {
+    height: 30px;
+    width: 30px;
+    padding-right: 10px;
+}
+
+.button-default-project{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 42px;
+    width: 230px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: var(--nav-color);
+
+}
+
+.button-default-project:hover{
+    background-color: var(--accent-color);
+}
+
+#projects-title, #add-project{
+    margin-top: 30px;
+}
+
+
+/* NAV && MAIN */
+#container {
+    flex: 1;
+    display: flex;
+
+}
+
+/* MAIN */
+#main {
+    width: 100%;
+    display: flex;
+    background-color:var(--main-color);
+
+}
+
+#page-title {
+    padding-left: 75px;
+}
+
+
+/* FOOTER */
+#footer {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-color);
+    color: var(--main-color);
+}
+
+#git-icon {
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
