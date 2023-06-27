@@ -1,5 +1,5 @@
 import UI from './UI'
 
-console.log('eeehh?')
+console.log('⭐')
 
 document.addEventListener('DOMContentLoaded', UI.loadHomepage)
