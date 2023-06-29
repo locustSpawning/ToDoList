@@ -85,7 +85,8 @@ export default class UI {
                 <div class="left-project-panel">
                     <span>${name}</span>
                 </div>
-                <div class="right-project-pane">
+                <div class="right-project-panel">
+                <img id="taskicon" src="images/x.svg" />
                 </div>
             </button>`
 
@@ -95,7 +96,7 @@ export default class UI {
     static createTask(name, dueDate) {
         const tasksList = document.getElementById('tasks-list')
         tasksList.innerHTML += `
-            <button class=button-tasks" data-task-button>
+            <button class="button-tasks" data-task-button>
                 <div class="left-task-panel">
                     <p class="task-content">${name}</p>
                     <input type="text" class="input-task-name" data-input-task-name>
@@ -232,15 +233,15 @@ export default class UI {
         const todayProjectsButton = document.getElementById('button-today-projects')
         const weekProjectsButton = document.getElementById('button-week-projects')
         const projectButtons = document.querySelectorAll('[data-project-button]')
-        const openNavButton = document.getElementById('button-open-nav')
+        // const openNavButton = document.getElementById('button-open-nav')
 
         inboxProjectsButton.addEventListener('click', UI.openInboxTasks)
         todayProjectsButton.addEventListener('click', UI.openTodayTasks)
         weekProjectsButton.addEventListener('click', UI.openWeekTasks)
         projectButtons.forEach((projectButton) =>
-        projectButton.addEventListener('click', UI.handleProjectButton)
+            projectButton.addEventListener('click', UI.handleProjectButton)
         )
-        openNavButton.addEventListener('click', UI.openNav)
+        // openNavButton.addEventListener('click', UI.openNav)
     }
 
     static openInboxTasks() {
