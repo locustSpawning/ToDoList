@@ -1,4 +1,4 @@
-import { compareAsc } from "date-fns";
+import { compareAsc, toDate } from "date-fns";
 import Project from './Project'
 import Task from './Task'
 
@@ -18,7 +18,7 @@ export default class TodoList {
         return this.projects
     }
 
-    getProjects(projectName){
+    getProject(projectName){
         return this.projects.find((project) => project.getName() === projectName)
     }
 
@@ -40,7 +40,7 @@ export default class TodoList {
     }
 
     updateTodayProject(){
-        this.getProjects('Today').tasks = []
+        this.getProject('Today').tasks = []
 
         this.projects.forEach((project) => {
             if (project.getName() === 'Today' || project.getName() === 'This week')
@@ -49,13 +49,13 @@ export default class TodoList {
                 const todayTasks = project.getTasksToday()
                 todayTasks.forEach((task) => {
                     const taskName = `${task.getName()} (${project.getName()})`
-                    this.getProjects('Today').addTask(new Task(taskName, task.getDate()))
+                    this.getProject('Today').addTask(new Task(taskName, task.getDate()))
                 })
         })
     }
 
     updateWeekProject(){
-        this.getProjects('This week').tasks = []
+        this.getProject('This week').tasks = []
 
         this.projects.forEach((project) => {
             if (project.getName() === 'Today' || project.getName() === 'This week')
@@ -64,12 +64,12 @@ export default class TodoList {
             const weekTasks = project.getTasksThisWeek()
             weekTasks.forEach((task) => {
                 const taskName = `${task.getName()} (${project.getName()})`
-                this.getProjects('This week').addTask(new Task(taskName, task.getDate()))
+                this.getProject('This week').addTask(new Task(taskName, task.getDate()))
             })
         })
 
-        this.getProjects('This week').setTasks(
-            this.getProjects('This week')
+        this.getProject('This week').setTasks(
+            this.getProject('This week')
                 .getTasks()
                 .sort((taskA, taskB) =>
                     compareAsc(
