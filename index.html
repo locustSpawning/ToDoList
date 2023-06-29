@@ -9,24 +9,49 @@
   <body>
     <header id="header">
       <img id="header-icon" src="images/note-multiple-outline.svg"/>
+      <script src="main.js" defer></script>
       <h1>Todo List</h1>
     </header>
 
     <div id="container">
       <nav id="nav">
-        <ul>
-          <li><button class ="button-default-project"><img class="nav-icons" id="all" src="images/expand-all.svg"/>All</button></li>
-          <li><button class ="button-default-project"><img class="nav-icons" id="today" src="images/calendar-today.svg"/>Today</button></li>
-          <li><button class ="button-default-project"><img class="nav-icons" id="week" src="images/view-week.svg" />This Week</button></li>
+        <!-- Default projects -->
+        <ul> 
+          <li><button class ="button-default-project" id="button-all-projects"><img class="nav-icons" src="images/expand-all.svg"/>All</button></li>
+          <li><button class ="button-default-project" id="button-today-projects"><img class="nav-icons" src="images/calendar-today.svg"/>Today</button></li>
+          <li><button class ="button-default-project" id="button-week-projects"><img class="nav-icons" src="images/view-week.svg" />This Week</button></li>
         </ul>
+        <!-- User projects -->
         <h2 id="projects-title">Projects</h2>
-          <ul></ul>
-        <button class ="button-default-project" id="add-project"><img  class="nav-icons" id="+" src="images/plus.svg" />Add Project</button>
+        <div class="projects-list" id="projects-list"></div>
+        <button class ="button-add-project" id="button-add-project"><img  class="nav-icons" id="+" src="images/plus.svg" />Add Project</button>
+        <div class="add-project-popup" id="add-project-popup">
+          <input
+            class="input-add-project-popup"
+            id="input-add-project-popup"
+            type="text"
+          />
+          <div class="add-project-popup-buttons">
+            <button
+              class="button-add-project-popup"
+              id="button-add-project-popup"
+            >
+              Add
+            </button>
+            <button
+              class="button-cancel-project-popup"
+              id="button-cancel-project-popup"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
       </nav>
-  
-      <div id="main">
+       <!-- Tasks -->
+      <div class="project-preview" id="project-preview"></div>
+      <!-- <div id="main">
         <h1 id="page-title">Current Page</h1>
-      </div>
+      </div> -->
     </div>
 
     <footer id="footer">
@@ -34,6 +59,7 @@
       <a href="https://github.com/locustSpawning" target="_blank"><img id="git-icon" src="images/github-mark.svg"/></a>
     </footer>
 
-    <script src="main.js"></script>
+    
   </body>
+  
 </html>
