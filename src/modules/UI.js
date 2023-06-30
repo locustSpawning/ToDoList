@@ -86,7 +86,7 @@ export default class UI {
                     <span>${name}</span>
                 </div>
                 <div class="right-project-panel">
-                <img id="taskicon" src="images/x.svg" />
+                <img class="deleteThis"  aria-hidden="true" id="taskicon" src="images/x.svg" />
                 </div>
             </button>`
 
@@ -259,9 +259,9 @@ export default class UI {
     }
 
     static handleProjectButton(e) {
-        const projectName = this.children[0].children[1].textContent
+        const projectName = this.children[0].children[1].textContent //stopped here  - - think i should use the trick from library project instead..
 
-        if (e.target.classList.contains('fa-times')) { //this needs to be adjusted
+        if (e.target.classList.contains('deleteThis')) { //this needs to be adjusted
         UI.deleteProject(projectName, this)
         return
         }
@@ -287,7 +287,7 @@ export default class UI {
         Storage.deleteProject(projectName)
         UI.clearProjects()
         UI.loadProjects()
-    }
+      }
 
     static openNav() {
         const nav = document.getElementById('nav')
