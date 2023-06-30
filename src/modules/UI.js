@@ -44,7 +44,7 @@ export default class UI {
         const projectPreview = document.getElementById('project-preview')
         projectPreview.innerHTML = `
             <h1 id="project-name">${projectName}</h1>
-            <div class="tasks-list id="tasks-list"></div>`
+            <div class="tasks-list" id="tasks-list"></div>`
 
         if (projectName !== "Today" && projectName !== 'This week') {
             projectPreview.innerHTML += `
@@ -131,7 +131,7 @@ export default class UI {
       }
     
       static closeAllPopups() {
-        UI.closeAddProjectPopup()
+        //UI.closeAddProjectPopup()
         if (document.getElementById('button-add-task')) {
           UI.closeAddTaskPopup()
         }
@@ -158,7 +158,7 @@ export default class UI {
 
     // PROJECT ADD EVENT LISTENERS
 
-    static initAddProjectButtons() {
+    static() {
         const addProjectButton = document.getElementById('button-add-project')
         const addProjectPopupButton = document.getElementById(
         'button-add-project-popup'
@@ -265,6 +265,8 @@ export default class UI {
 
         if (thisProject) { 
             deleteThisProject.remove();
+            // UI.deleteTask(deleteThisProject);
+            
         }
 
         else {
@@ -316,10 +318,12 @@ export default class UI {
     }
 
     static openAddTaskPopup() {
+        
         const addTaskPopup = document.getElementById('add-task-popup')
         const addTaskButton = document.getElementById('button-add-task')
-
+        console.log('alert!!');
         UI.closeAllPopups()
+        
         addTaskPopup.classList.add('active')
         addTaskButton.classList.add('active')
     }
@@ -381,10 +385,10 @@ export default class UI {
         UI.setTaskCompleted(this)
         return
         }
-        if (e.target.classList.contains('fa-times')) {
-        UI.deleteTask(this)
-        return
-        }
+        // if (e.target.classList.contains('deleteThis')) {
+        // UI.deleteTask(this)
+        // return
+        // }
         if (e.target.classList.contains('task-content')) {
         UI.openRenameInput(this)
         return
