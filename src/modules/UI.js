@@ -261,12 +261,15 @@ export default class UI {
     static handleProjectButton(e) {
         let thisProject = e.target.closest('.right-project-panel');
         let deleteThisProject = e.target.closest('.button-project');
+        let projectName = e.target.closest('.button-project').innerHTML;
 
         if (thisProject) { 
             deleteThisProject.remove();
         }
 
-        UI.openProject(projectName, this)
+        else {
+            UI.openProject(projectName, this)
+        }
     }
 
     static openProject(projectName, projectButton) {
