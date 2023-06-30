@@ -259,11 +259,11 @@ export default class UI {
     }
 
     static handleProjectButton(e) {
-        const projectName = this.children[0].children[1].textContent //stopped here  - - think i should use the trick from library project instead..
+        let thisProject = e.target.closest('.right-project-panel');
+        let deleteThisProject = e.target.closest('.button-project');
 
-        if (e.target.classList.contains('deleteThis')) { //this needs to be adjusted
-        UI.deleteProject(projectName, this)
-        return
+        if (thisProject) { 
+            deleteThisProject.remove();
         }
 
         UI.openProject(projectName, this)
