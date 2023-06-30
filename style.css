@@ -112,14 +112,6 @@ ul {
 
 }
 
-.right-project-panel {
-    visibility: hidden;
-  }
-
-  .button-project:hover .right-project-panel {
-    visibility: visible;
-  }
-
 #projects-title, #add-project{
     margin-top: 30px;
 }
@@ -328,6 +320,18 @@ ul {
   
   .button-cancel-task-popup:hover {
     background-color: #f5b2b2;
+  }
+
+  .button-add-project.active {
+    display: none;
+  }
+
+  .right-project-panel {
+    visibility: hidden;
+  }
+  
+  .button-project:hover .right-project-panel {
+    visibility: visible;
   }
 
 /* NAV && MAIN */
