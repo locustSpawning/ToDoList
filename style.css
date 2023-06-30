@@ -116,17 +116,7 @@ ul {
     margin-top: 30px;
 }
 
-.add-project-popup {
-    display: none;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .add-project-popup.active {
-    display: block;
-  }
-  
+
   .input-add-project-popup {
     border: 1px solid #aaa;
     margin-bottom: 10px;
@@ -278,6 +268,18 @@ ul {
   .button-add-task:hover {
     background-color: var(--accent-color);
   }
+
+  .add-project-popup {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .add-project-popup.active {
+    display: block;
+  }
+  
   
   .add-task-popup {
     display: none;
@@ -307,6 +309,7 @@ ul {
     background-color: #aaffaa;
     font-weight: bold;
   }
+
   
   .button-cancel-task-popup {
     border: 1px solid #eeadad;
